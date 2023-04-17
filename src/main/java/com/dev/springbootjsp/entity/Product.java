@@ -24,6 +24,6 @@ public class Product {
     private BigDecimal discountedValue;
 
     public BigDecimal getDiscountedValue() {
-        return value.subtract(value.multiply(discount));
+        return value.subtract((value.multiply(discount.divide(BigDecimal.valueOf(100))))).setScale(2);
     }
 }
